@@ -73,6 +73,11 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # defaut url options TODO CHECK THE PORT FOR HEROKU
+
+  config.action_mailer.default_url_options = { host: 'carbo-date-ai-assistant-587de4d18fe8.herokuapp'}
+ 
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
