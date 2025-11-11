@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_11_110047) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_11_160156) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chat_items", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "category"
+    t.bigint "chat_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_chat_items_on_chat_id"
+    t.index ["item_id"], name: "index_chat_items_on_item_id"
+  end
 
   create_table "chats", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -25,10 +37,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_11_110047) do
     t.string "name"
     t.string "brand"
     t.bigint "user_id", null: false
-    t.bigint "chat_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chat_id"], name: "index_items_on_chat_id"
+    t.string "category"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -53,8 +64,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_11_110047) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chat_items", "chats"
+  add_foreign_key "chat_items", "items"
   add_foreign_key "chats", "users"
-  add_foreign_key "items", "chats"
   add_foreign_key "items", "users"
   add_foreign_key "messages", "chats"
 end

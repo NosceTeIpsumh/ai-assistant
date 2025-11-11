@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
   belongs_to :user
-  belongs_to :chat
+  has_many :chat_items
 end
