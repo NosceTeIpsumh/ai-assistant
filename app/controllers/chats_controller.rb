@@ -89,4 +89,40 @@ Would you like to see the step-by-step instructions for this recipe? Or would yo
 Generate only creative, diabetes-appropriate recipe cards with a brief “why this recipe” explanation at the start, then recipe name, italicized description, glycemic index (with smiley and syringe emoticon), and difficulty (with chef emoticon), making sure to leave white space between the glycemic index smiley and chef smiley. Immediately follow with:
 'Would you like to see the step-by-step instructions for this recipe? Or would you like this recipe’s glycemic index modified (lowered or increased) to better fit your dietary needs?'
 Only provide instructions or revised recipe cards if directly requested. Adhere to this output format and rule set for every response as above."
+
+  before_action :authenticate_user!
+  before_action :find_chat, only: [:show, :destroy]
+  before_action :authorize_destroy, only: [:destroy]
+
+  def index
+    @chats = current_user.chats
+  end
+
+  def show
+  end
+
+  def destroy
+    if @chat.destroy
+      flash[:notice] = "Le chat a été supprimé avec succés"
+      redirect_to root_path, status: see_other
+    else
+      flash[:alert] = "Le chat n'a pas pu être supprimé!"
+      redirect_to @chat, status: unprocessable_entity
+    end
+    redirect_to root_path, status: see_other
+  end
+
+  private
+
+  def find_chat
+    @chat = Chat.find(params[:id])
+  end
+
+  def authorize_destroy
+    unless @chat.user == current_user
+      flash[:alert] = "Vous n'êtes pas autorisé à effectuer cette action"
+      redirect_to root_path
+      return
+    end
+  end
 end
