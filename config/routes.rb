@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
   resources :chats, only: [:show, :destroy, :index] do
     resources :messages, only: [:create]
-    resources :chat_items, only: [:create]
   end
+  resources :chat_items, only: [:new, :create]
   resources :items, except: [:edit, :update]
 end
