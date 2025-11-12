@@ -1,0 +1,9 @@
+<h1>New item</h1>
+<%= simple_form_for @item do |f| %>
+  <%= f.input :name %>
+  <%= f.input :brand %>
+  <%= f.input :category, collection: ["glucide", "proteine", "graisse", "fibres","legume"] %>
+  <%= f.input :indice_gly %>
+  <%= f.input :ratio_glucide %>
+  <%= f.submit "Submit item", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,6 @@
+<h2><%= @item.name %></h2>
+<p><%= @item.brand %></p>
+<p><%= @item.category %></p>
+<p><%= @item.indice_gly %></p>
+<p><%= @item.ratio_glucide %></p>
+<%= link_to "Delete", item_path(@item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
