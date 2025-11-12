@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="text-center py-5">
+  <h1 class="header-home display-5 fw-bold text-primary">Créez & discutez avec CarboDataIA 👨‍🍳🤖</h1>
+  <p class="lead text-muted mt-3">
+    Laissez l’intelligence artificielle générer vos recettes ou discuter avec vous pour améliorer vos plats selon vos besoins.
+  </p>
+
+  <div class="mt-4 d-flex justify-content-center gap-3 flex-wrap">
+    <%= link_to "Créer une recette", "#", class: "btn btn-primary btn-lg px-4 py-2" %>
+    <%= link_to "Discuter avec le Chef", "#", class: "btn btn-outline-primary btn-lg px-4 py-2" %>
+  </div>
+
+  <div class="mt-5">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
+         alt="Cuisine IA" class="img-fluid rounded-5 shadow-sm">
+  </div>
+</div>
