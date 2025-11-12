@@ -16,5 +16,5 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
     resources :chat_items, only: [:create]
   end
-  resources :items
+  resources :items, except: [:edit, :update]
 end
