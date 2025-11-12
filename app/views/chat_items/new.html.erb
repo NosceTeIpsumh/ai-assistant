@@ -1,0 +1,21 @@
+<h1>Sélectionnez Items - Style Cartes Dynamiques</h1>
+
+<%= simple_form_for @chat_item do |f| %>
+
+  <br>
+
+  <%= f.association :item,
+              as: :check_boxes,
+              label: 'Items à inclure dans la recette',
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper',
+              item_wrapper_class: 'category-item',
+              input_html: {class: 'category-selector'},
+              collection: current_user.items
+  %>
+
+  <hr>
+
+  <%= f.button :submit, "Démarrer le Chat", class: 'btn btn-primary mt-4' %>
+
+<% end %>
