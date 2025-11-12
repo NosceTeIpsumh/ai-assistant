@@ -7,13 +7,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body style="background-color: #EAEAEA">
-    <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
+    <div class="page-container">
     <%= yield %>
+    </div>
     <%= render "shared/footer" %>
   </body>
 </html>
