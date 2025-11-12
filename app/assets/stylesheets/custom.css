@@ -2,3 +2,7 @@ body {
   background-color: #EAEAEA;
   font-family: 'Roboto', sans-serif;
 }
+
+.page-container {
+ min-height: 90vh;
+}
