@@ -22,11 +22,11 @@ class ChatItemsController < ApplicationController
         item_id: original_item.id,
         name: original_item.name,
         brand: original_item.brand,
+        indice_gly: original_item.indice_gly,
+        ratio_glucide: original_item.ratio_glucide,
+        category: original_item.category
       )
     end
-    redirect_to chat_path
+    redirect_to chat_path(@chat)
   end
 end
-        # indice_gly: original_item.indice_gly,
-        # ratio_glucide: original_item.ratio_glucide,
-        # category: original_item.category
