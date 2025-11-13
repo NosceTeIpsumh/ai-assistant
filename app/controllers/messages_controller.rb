@@ -90,5 +90,30 @@ Generate only creative, diabetes-appropriate recipe cards with a brief “why th
 'Would you like to see the step-by-step instructions for this recipe? Or would you like this recipe’s glycemic index modified (lowered or increased) to better fit your dietary needs?'
 Only provide instructions or revised recipe cards if directly requested. Adhere to this output format and rule set for every response as above."
 
+  def create
+    @chat = current_user.chats.find(params[:chat_id])
+    @message = Message.new(message_params)
+    @message.chat = @chat
+    @message.role = "you"
 
+    if @message.save!
+      ruby_llm_chat = RubyLLM.chat
+      response = ruby_llm_chat.with_instructions(SYSTEM_PROMPT).ask(@message.content)
+      Message.create!(role: "SuperCarbo", content: response.content, chat: @chat)
+      redirect_to chat_path(@chat)
+    else
+      render "chats/show", status: :unprocessable_entity
+    end
+  end
+
+
+  private
+
+  def message_params
+    params.require(:message).permit(:content)
+  end
+
+  def instructions
+    #TODO foutre SYSTEM_PROMPT avec @chat.chat_items
+  end
 end
