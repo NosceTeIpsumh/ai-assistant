@@ -8,6 +8,7 @@ class ChatsController < ApplicationController
   end
 
   def show
+    @message = Message.new
   end
 
   def destroy
@@ -16,7 +17,7 @@ class ChatsController < ApplicationController
       redirect_to root_path, status: :see_other
     else
       flash[:alert] = "Le chat n'a pas pu être supprimé!"
-      redirect_to @chat, status: :unprocessable_entity
+      redirect_to chat_path(@chat), status: :unprocessable_entity
     end
     redirect_to root_path, status: :see_other
   end

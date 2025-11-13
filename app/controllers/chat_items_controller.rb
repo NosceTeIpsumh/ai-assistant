@@ -6,9 +6,6 @@ class ChatItemsController < ApplicationController
   end
   def create
     @chat = Chat.create!(user_id: current_user.id)
-    # unless @chat.save
-    #   flash[:alert] = "Impossible de démarrer le chat"
-    # end
     @retrieved_items = params[:chat_item][:item_id] # ["", 1, 2, 3]
     @cleaned_retrieved_items = @retrieved_items.reject(&:empty?) # Enlève le empty à l'index 0 -> [1, 2, 3]
     @selected_items = @cleaned_retrieved_items.map { |selected_item| Item.where(id: selected_item).uniq } # On comparait les chiffres dans les array avec les ID des Items
