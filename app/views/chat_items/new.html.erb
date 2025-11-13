@@ -1,21 +1,27 @@
-<h1>Sélectionnez Items - Style Cartes Dynamiques</h1>
+<div class="container py-5">
+  <h1 class="text-center display-5 fw-bold text-primary mb-5">
+    Sélectionnez vos Carboduct
+  </h1>
 
-<%= simple_form_for @chat_item do |f| %>
+  <%= simple_form_for @chat_item do |f| %>
 
-  <br>
+    <div class="row g-4">
+      <%= f.association :item,
+        as: :check_boxes,
+        label: "",
+        label_method: :show_name_and_brand,
+        collection_wrapper_tag: 'div',
+        collection_wrapper_class: 'category-wrapper',
+        item_wrapper_tag: 'div',
+        item_wrapper_class: 'category-item',
+        input_html: { class: 'category-selector' },
+        collection: current_user.items
+      %>
 
-  <%= f.association :item,
-              as: :check_boxes,
-              label: 'Items à inclure dans la recette',
-              collection_wrapper_tag: 'div',
-              collection_wrapper_class: 'category-wrapper',
-              item_wrapper_class: 'category-item',
-              input_html: {class: 'category-selector'},
-              collection: current_user.items
-  %>
+    </div>
 
-  <hr>
-
-  <%= f.button :submit, "Démarrer le Chat", class: 'btn btn-primary mt-4' %>
-
-<% end %>
+    <div class="text-center mt-5">
+      <%= f.button :submit, "Démarrer le Chat", class: 'btn btn-primary btn-lg rounded-5' %>
+    </div>
+  <% end %>
+</div>
