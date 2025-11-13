@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="text-center pt-1 pb-3">
+    <h1 class="display-5 fw-bold text-primary mb-4 mt-4">
+      Historique des chats
+    </h1>
+  </div>
+
+  <div class="row">
+    <% @chats.each do |chat| %>
+      <div class="col-lg-4 mb-4">
+        <div class="card-product">
+          <div class="card-product-infos">
+            <p><%= chat.title %></p>
+          </div>
+            <%= link_to chat_path(chat) do %>
+              <div class= "">
+                <p>Accéder à l'historique du chat!</p>
+              </div>
+            <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
