@@ -7,4 +7,8 @@ class Item < ApplicationRecord
   validates :category, presence: true
   validates :indice_gly, presence: true
   validates :ratio_glucide, presence: true
+
+  def show_name_and_brand
+    "#{name} - #{brand} : #{indice_gly} IG"
+  end
 end
