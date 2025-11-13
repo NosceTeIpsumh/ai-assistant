@@ -5,7 +5,7 @@ class Chat < ApplicationRecord
 
   DEFAULT_TITLE = "Untitled"
   TITLE_PROMPT = <<~PROMPT
-    Generate a short, descriptive, 3-to-6-word title that summarizes your first response for a chat conversation.
+    Generate the title of the recipe you proposed to the user
   PROMPT
   def generate_title_from_first_message
     return unless title == DEFAULT_TITLE
