@@ -4,4 +4,31 @@
   min-height: 10vh;
   min-width: 100%;
   z-index: 20;
+  background-color: #EAEAEA;
+}
+
+.navbar .nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -23px; /* distance entre l’icône et le trait */
+  top: 50%;
+  transform: translateY(-50%); /* 👈 centre verticalement */
+  width: 1px;
+  height: 16px; /* 👈 petit trait élégant */
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.navbar .btn {
+  color: #3b82f6;
+  border: none;
+}
+
+.navbar .btn:hover {
+  color: #033cb5;
 }
