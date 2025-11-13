@@ -1,5 +1,11 @@
-<ul>
-  <% @items.each do |item| %>
-    <li><%= link_to item.name, item_path(item[:id])  %></li>
-  <% end %>
-</ul>
+<div class="container-div container">
+  <div class="text-center">
+    <h1 class="header-home display-5 fw-bold text-primary">🧺🫛Tous mes ingrédients🥩🧺</h1>
+      <ul class= "center-list">
+        <% @items.each do |item| %>
+          <li><%= link_to item.name, item_path(item[:id]), class: "btn btn-secondary btn-lg w-100 px-4 py-2"  %></li>
+        <% end %>
+      </ul>
+      <%= link_to "Ajouter un ingrédient", new_item_path, class: "btn btn-primary btn-lg px-4 py-2" %>
+  </div>
+</div>

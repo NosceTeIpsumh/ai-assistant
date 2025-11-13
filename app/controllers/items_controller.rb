@@ -19,8 +19,8 @@ class ItemsController < ApplicationController
     @item = current_user.items.new(item_params)
     if @item.save
       redirect_to items_path
-    #else
-    #  render :new, status: :unprocessable_entity
+    else
+      render :new, status: :unprocessable_entity
     end
   end
   def destroy
