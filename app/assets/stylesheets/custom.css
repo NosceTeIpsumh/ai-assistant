@@ -7,6 +7,18 @@ body {
  min-height: 90vh;
 }
 
+.placeholder-custom::placeholder {
+  font-family: 'Courier New', monospace; /* Police du placeholder */
+  font-size: 16px;
+  color: #999;
+  font-style: italic;
+}
+
+.custom-font {
+  font-family: 'Courier New', monospace; /* Police du placeholder */
+  font-size: 16px;
+  color: #999;
+  font-style: italic;
 .carousel-inner img {
   height: 400px;         /* 👈 hauteur plus petite (ajuste selon ton goût) */
   object-fit: cover;     /* garde le ratio sans déformation */
