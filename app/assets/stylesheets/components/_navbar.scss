@@ -16,11 +16,11 @@
 .navbar .nav-item:not(:last-child)::after {
   content: "";
   position: absolute;
-  right: -23px; /* distance entre l’icône et le trait */
+  right: -23px;
   top: 50%;
-  transform: translateY(-50%); /* 👈 centre verticalement */
+  transform: translateY(-50%);
   width: 1px;
-  height: 16px; /* 👈 petit trait élégant */
+  height: 16px;
   background-color: rgba(0, 0, 0, 0.15);
 }
 

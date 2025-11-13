@@ -16,9 +16,9 @@
         <div class="d-grid gap-3 mt-5">
           <%= link_to "Modifier le profil", "#", class: "btn btn-primary btn-lg rounded-5" %>
           <%= link_to "Mes recettes", "#", class: "btn btn-primary btn-lg rounded-5" %>
-          <%= link_to "Mes CarboDuct", items_path, class: "btn btn-primary btn-lg rounded-5" %>
+          <%= link_to "Mes Carboduct", items_path, class: "btn btn-primary btn-lg rounded-5" %>
           <%= link_to "Recettes suivies", "#", class: "btn btn-primary btn-lg rounded-5" %>
-          <%= link_to "Se déconnecter", "#", class: "btn btn-primary btn-lg rounded-5" %>
+          <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-primary btn-lg rounded-5" %>
         </div>
       </div>
     </div>
