@@ -1,15 +1,36 @@
 <div class="text-center pt-1 pb-5">
-  <h1 class="header-home display-5 fw-bold text-primary">Créez & discutez avec CarboDataIA 👨‍🍳🤖</h1>
+  <h1 class="header-home display-5 fw-bold text-primary">
+    Créez & discutez avec CarboDataIA 👨‍🍳🤖
+  </h1>
+
   <p class="lead text-muted mt-3">
     Laissez l’intelligence artificielle générer vos recettes ou discuter avec vous pour améliorer vos plats selon vos besoins.
   </p>
 
   <div class="mt-4 d-flex justify-content-center gap-3 flex-wrap">
     <%= link_to "Discuter avec le Chef", "#", class: "btn btn-primary btn-lg px-4 py-2" %>
+    <%= link_to "Ajouter un CarboDuct", new_item_path, class: "btn btn-primary btn-lg px-4 py-2" %>
   </div>
 
-  <div class="mt-5 mb-5">
-    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
-         alt="Cuisine IA" class="img-fluid rounded-5 shadow-sm" style="width: 90%;">
+  <!-- Nouveau carousel -->
+  <div id="recipeCarousel" class="carousel slide mt-5 mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner rounded-5 shadow-sm">
+      <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" class="d-block mx-auto" style="width: 80%; height: 700px; object-fit: cover;" alt="Recette 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFsaW1lbnRzfGVufDB8fDB8fHww" class="d-block mx-auto" style="width: 80%; height: 700px; object-fit: cover;" alt="Recette 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1601315379734-425a469078de?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHJlY2lwZXxlbnwwfHwwfHx8MA%3D%3D" class="d-block mx-auto" style="width: 80%; height: 700px; object-fit: cover;" alt="Recette 3">
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#recipeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#recipeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
   </div>
 </div>

@@ -6,3 +6,23 @@ body {
 .page-container {
  min-height: 90vh;
 }
+
+.carousel-inner img {
+  height: 400px;         /* 👈 hauteur plus petite (ajuste selon ton goût) */
+  object-fit: cover;     /* garde le ratio sans déformation */
+  border-radius: 1rem;   /* garde les coins arrondis */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 3rem;             /* 👈 taille des flèches (2rem par défaut) */
+  height: 3rem;
+  filter: invert(100%);    /* rend la flèche blanche si ton fond est sombre */
+  opacity: 0.9;            /* plus visible */
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  opacity: 1;              /* encore plus visible au survol */
+  transform: scale(1.1);   /* petit effet de zoom au hover */
+}
