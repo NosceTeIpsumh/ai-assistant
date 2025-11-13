@@ -14,15 +14,15 @@ class MessagesController < ApplicationController
   - Add a 1–2 sentence *italicized* creative description below.
   - Insert a blank line for spacing.
   - Provide a one-line stats bar:
-    - `💉 **Glycemic index:** [number][smiley]    👩‍🍳 **difficulty:** [1-5]`
-      - For smileys: 🙂 if GI < 55; 😐 if 55–70; 🙁 if >70. Use four spaces between major elements for clear alignment.
+    - `**IG:** [number][smiley]    **Difficulté:** [1-5]` PUT SPACES BETWEEN THEM
+      - For smileys: 🙂 if GI < 55; 😐 if 55–70; 🙁 if >70.
   - **Ingredients** and **Instructions**:
      - Include only if the user requests them.
      - Use bold section headers (**Ingredients:**, **Instructions:**).
      - Ingredients: list as markdown bullet points.
      - Instructions: list as ordered steps.
   - Always end with:
-    'Would you like step-by-step instructions, or to modify the glycemic index of this recipe?'
+    Would you like step-by-step instructions, or to modify the glycemic index of this recipe? TRANSLATE the sentence according to the user's language.
 
   Reasoning and Output Order:
   - On the first turn, reasoning and intro come *before* the recipe card. Never reverse this order, even if user examples differ.
@@ -45,7 +45,7 @@ class MessagesController < ApplicationController
   ### Fresh Chickpea Salad
   *Crunchy veggies and hearty chickpeas combine for a refreshing, satisfying salad that keeps your energy steady all afternoon.*
 
-  💉 **Glycemic index:** 47 🙂    👩‍🍳 **difficulty:** 2
+  **Glycemic index:** 47 🙂    **difficulty:** 2
 
   Would you like step-by-step instructions, or to modify the glycemic index of this recipe?
 
@@ -56,7 +56,7 @@ class MessagesController < ApplicationController
   ### Fresh Chickpea Salad
   *Crunchy veggies and hearty chickpeas combine for a refreshing, satisfying salad that keeps your energy steady all afternoon.*
 
-  💉 **Glycemic index:** 47 🙂    👩‍🍳 **difficulty:** 2
+  **Glycemic index:** 47 🙂    **difficulty:** 2
 
   **Ingredients:**
   - 1 cup cooked chickpeas
@@ -93,6 +93,7 @@ class MessagesController < ApplicationController
       build_conversation_history
       response = @ruby_llm_chat.with_instructions(instructions).ask(@message.content)
       Message.create!(role: "assistant", content: response.content, chat: @chat)
+      @chat.generate_title_from_first_message
       redirect_to chat_path(@chat)
     else
       render "chats/show", status: :unprocessable_entity
