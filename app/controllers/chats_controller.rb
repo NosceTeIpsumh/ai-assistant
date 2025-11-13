@@ -8,7 +8,6 @@ class ChatsController < ApplicationController
   end
 
   def show
-    # Faut-il adapter find_chat au current-user.chats.find(params[:id])
     @message = Message.new
   end
 
@@ -26,7 +25,7 @@ class ChatsController < ApplicationController
   private
 
   def find_chat
-    @chat = Chat.find(params[:id]) # current_user.chats.find(params[:id])
+    @chat = Chat.find(params[:id])
   end
 
   def authorize_destroy
