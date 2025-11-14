@@ -3,27 +3,19 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.page-container {
- min-height: 90vh;
-}
-
-.placeholder-custom::placeholder {
-  font-family: 'Courier New', monospace; /* Police du placeholder */
-  font-size: 16px;
-  color: #999;
-  font-style: italic;
-}
-
-.custom-font {
-  font-family: 'Courier New', monospace; /* Police du placeholder */
-  font-size: 16px;
-  color: #999;
-  font-style: italic;
-}
+/* Carousel */
 .carousel-inner img {
-  height: 400px;
+  width: 80%;
+  height: 700px;
   object-fit: cover;
   border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.carousel-inner img:hover {
+  transform: scale(1.02);
 }
 
 .carousel-control-prev-icon,
@@ -40,4 +32,69 @@ body {
   transform: scale(1.1);
 }
 
+/* Logo central */
+.homepage-brand {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1000;
+}
 
+.homepage-brand h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0066ff, #33ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.homepage-brand p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: linear-gradient(90deg, #3399ff, #66ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+/* Bouton Se connecter */
+.homepage-login-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.homepage-login-btn .btn {
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* Boutons dans la section principale */
+.homepage-main-text .btn {
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.homepage-main-text .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Espacement texte principal sous logo */
+.homepage-main-text {
+  margin-top: 180px;
+}
