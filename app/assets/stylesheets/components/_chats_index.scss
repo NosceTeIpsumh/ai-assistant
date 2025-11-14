@@ -3,13 +3,17 @@ $border-color: #dee2e6;
 
 .card-product-bis {
   margin-top: 40px;
+  width:30%;
   overflow: hidden;
-  height: 160px;
   background: white;
   box-shadow: $card-shadow;
+  position: relative;
   h6 {
-   font-size: 1rem;
-   text-align: center;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.4;
+    min-height: 45px;
+    overflow: hidden;
   }
 }
 
@@ -74,4 +78,10 @@ $border-color: #dee2e6;
 
 .card-product-bis .card-product-infos {
   padding: 16px;
+}
+
+.chats-container {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
