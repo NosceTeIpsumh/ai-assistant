@@ -1,0 +1,26 @@
+.div-item-button {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primary-item-style {
+  background-color: white;
+  color: black;
+  border: 1px solid #F5F5F5;
+
+  &:hover {
+    background-color: #D3D3D3;
+    border-color:BLACK;
+  }
+}
+
+.center-list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  list-style: none;
+  padding: 0;
+}

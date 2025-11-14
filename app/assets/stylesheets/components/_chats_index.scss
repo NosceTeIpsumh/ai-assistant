@@ -1,0 +1,77 @@
+$card-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+$border-color: #dee2e6;
+
+.card-product-bis {
+  margin-top: 40px;
+  overflow: hidden;
+  height: 160px;
+  background: white;
+  box-shadow: $card-shadow;
+  h6 {
+   font-size: 1rem;
+   text-align: center;
+  }
+}
+
+.div-button {
+  text-align: center;
+  padding: 8px 12px;
+  border: 1px solid $border-color;
+  border-radius: 0.25rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.4s ease !important;
+  p {
+    margin-bottom: 0;
+  }
+
+   &:hover {
+    cursor: pointer;
+    transition: all;
+  }
+}
+
+.access-button {
+  background-color: #f8f9fa;
+  margin-bottom: 8px;
+
+  &:hover {
+      background-color: #e9ecef;
+  }
+}
+
+.delete-button {
+  background-color: #f8d7da;
+  color: #721c24;
+  margin-bottom: 8px;
+
+  &:hover {
+      background-color: #f7c0c7;
+  }
+}
+
+.card-product-bis {
+  a.d-block {
+    display: block;
+    text-decoration: none;
+  }
+}
+
+.card-product-bis h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product-bis p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-bis .card-product-infos {
+  padding: 16px;
+}

@@ -1,27 +1,54 @@
 <div class="container py-5">
-  <h1 class="text-center display-5 fw-bold text-primary mb-5">
-    Sélectionnez vos Carboduct
-  </h1>
+  <div class="card shadow-sm rounded-5 mt-4 p-4">
+    <h1 class="text-center display-5 fw-bold text-primary mb-5">
+      Sélectionnez vos Carboduct
+    </h1>
+    <% if @items.any? %>
+      <%= simple_form_for @chat_item do |f| %>
 
-  <%= simple_form_for @chat_item do |f| %>
+        <div class="row g-4">
+          <%= f.association :item,
+            as: :check_boxes,
+            label: "",
+            label_method: :show_name_and_brand,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_tag: 'div',
+            item_wrapper_class: 'category-item',
+            input_html: { class: 'category-selector' },
+            collection: current_user.items
+          %>
+        </div>
 
-    <div class="row g-4">
-      <%= f.association :item,
-        as: :check_boxes,
-        label: "",
-        label_method: :show_name_and_brand,
-        collection_wrapper_tag: 'div',
-        collection_wrapper_class: 'category-wrapper',
-        item_wrapper_tag: 'div',
-        item_wrapper_class: 'category-item',
-        input_html: { class: 'category-selector' },
-        collection: current_user.items
-      %>
+        <div class="text-center mt-2">
+          <%= f.button :submit, "Démarrer le Chat", class: 'btn btn-primary btn-lg px-4 py-2 mt-2' %>
+        </div>
+      <% end %>
+    <% else %>
 
-    </div>
+      <h1 class = "text-center">Please add some Carboducts first if you want specific recipes from our BOT! 🤖 </h1>
+        <%= simple_form_for @chat_item do |f| %>
 
-    <div class="text-center mt-5">
-      <%= f.button :submit, "Démarrer le Chat", class: 'btn btn-primary btn-lg rounded-5' %>
-    </div>
-  <% end %>
+        <div class="row g-4">
+          <%= f.association :item,
+            as: :check_boxes,
+            label: "",
+            label_method: :show_name_and_brand,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_tag: 'div',
+            item_wrapper_class: 'category-item',
+            input_html: { class: 'category-selector' },
+            collection: current_user.items
+          %>
+
+        </div>
+
+        <div class="text-center mt-2">
+          <%= f.button :submit, "Démarrer le Chat", class: 'btn btn-primary btn-lg rounded-5' %>
+        </div>
+      <% end %>
+    <% end %>
+  <%= link_to "Home", root_path, class: "btn btn-secondary btn-lg px-4 py-2 mt-2" %>
+  </div>
 </div>
