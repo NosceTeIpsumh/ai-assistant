@@ -4,7 +4,7 @@
       <%= simple_form_for @item do |f| %>
         <%= f.input :name, placeholder: "Exemple: patate douce, entrecôte, banane...", input_html: { class: "placeholder-custom" } %>
         <%= f.input :brand, placeholder: "Exemple: Panzani, Charal, Cassegrain...", input_html: { class: "placeholder-custom" } %>
-        <%= f.input :category, collection: ["Glucide", "Proteine", "graisse", "fibres","legume"], prompt: false, input_html: { class: "form-select custom-font" } %>
+        <%= f.input :category, collection: ["Légumes et fruits", "Féculents et légumes secs", "Lait et substituts", "Viandes et substituts", "Matières grasses", "Produits sucrées", "Eaux", "Alcools", "Boissons sucrées", "Vitamines et Minéraux"], prompt: false, input_html: { class: "form-select custom-font" } %>
         <%= f.input :indice_gly, placeholder: "Compris entre 1 et 100", input_html: { class: "placeholder-custom" } %>
         <%= f.input :ratio_glucide, placeholder: "Pour 100g. Exemple: 27", input_html: { class: "placeholder-custom" } %>
         <%= f.submit "Enregistrer le CarboDuct", class: "btn btn-primary" %>
