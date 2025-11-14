@@ -14,12 +14,11 @@ class ChatsController < ApplicationController
   def destroy
     if @chat.destroy
       flash[:notice] = "Le chat a été supprimé avec succés"
-      redirect_to root_path, status: :see_other
+      redirect_to chats_path, status: :see_other
     else
       flash[:alert] = "Le chat n'a pas pu être supprimé!"
       redirect_to chat_path(@chat), status: :unprocessable_entity
     end
-    redirect_to root_path, status: :see_other
   end
 
   private

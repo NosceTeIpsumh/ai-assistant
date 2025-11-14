@@ -1,11 +1,26 @@
 <div class="container-div container">
-  <div class="text-center">
-    <h1 class="header-home display-5 fw-bold text-primary">🧺🫛Tous mes ingrédients🥩🧺</h1>
-      <ul class= "center-list">
+  <div class="card shadow-sm rounded-5 mt-4 p-4">
+    <div class="text-center">
+      <h1 class="header-home display-5 fw-bold text-primary">🧺🫛Tous mes CarboDucts🥩🧺</h1>
+
+      <div class="row justify-content-center mt-4">
+
         <% @items.each do |item| %>
-          <li><%= link_to item.name, item_path(item[:id]), class: "btn btn-secondary btn-lg w-100 px-4 py-2"  %></li>
+
+          <div class="col-6 col-md-4 col-lg-3 mb-4">
+
+            <%= link_to item_path(item[:id]), class: "d-block text-decoration-none h-100" do %>
+              <div class="div-item-button primary-item-style w-100 px-4 py-3">
+                <%= "#{item.name} - #{item.brand}" %>
+              </div>
+            <% end %>
+
+          </div>
         <% end %>
-      </ul>
-      <%= link_to "Ajouter un ingrédient", new_item_path, class: "btn btn-primary btn-lg px-4 py-2" %>
+
+      </div>
+
+      <%= link_to "Ajouter un CarboDuct", new_item_path, class: "btn btn-primary btn-lg px-4 py-2 mt-4" %>
+    </div>
   </div>
 </div>
