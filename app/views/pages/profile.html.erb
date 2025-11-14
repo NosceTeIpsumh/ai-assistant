@@ -10,13 +10,13 @@
 
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Discussions avec le bot : <strong><%= current_user.chats.count %></strong></li>
-          <li class="list-group-item">Carboducts ajoutés : <strong><%= current_user.items.count %></strong></li>
+          <li class="list-group-item">CarboDucts ajoutés : <strong><%= current_user.items.count %></strong></li>
         </ul>
 
         <div class="d-grid gap-3 mt-5">
           <%= link_to "Modifier le profil", "#", class: "btn btn-primary btn-lg rounded-5" %>
           <%= link_to "Mes recettes", "#", class: "btn btn-primary btn-lg rounded-5" %>
-          <%= link_to "Mes Carboduct", items_path, class: "btn btn-primary btn-lg rounded-5" %>
+          <%= link_to "Mes Carboducts", items_path, class: "btn btn-primary btn-lg rounded-5" %>
           <%= link_to "Mes CarboChats", chats_path, class: "btn btn-primary btn-lg rounded-5" %>
           <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-primary btn-lg rounded-5" %>
         </div>
