@@ -1,0 +1,36 @@
+<div class="container w-50">
+  <div>
+    <h3 class="mb-3"><%= @recipe.name %></h3>
+  </div>
+  <div>
+    <p><%= @recipe.description %></p>
+  </div>
+  <div class="d-flex">
+    <div>
+      <strong>Indice glycémique:</strong><%if @recipe.indice_gly < 55 %>
+      <%= @recipe.indice_gly %>🙂
+      <% elsif @recipe.indice_gly > 70 %>
+        <%= @recipe.indice_gly %>🙁
+      <% else %>
+        <%= @ecipe.indice_gly %>😐
+      <% end %>
+    </div>
+    <div class="ms-5">
+      <strong>Difficulté: </strong><%= @recipe.difficulty %>
+    </div>
+  </div>
+  <div class="d-flex gap-3">
+    <div>
+      <%= link_to recipe_path(@recipe),
+        data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr(e) de vouloir supprimer cette recette ?" },
+        class: "d-block text-decoration-none btn btn-danger w-100 h-75" do %>
+        <div>
+          <p>Supprimer</p>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to "Mes recettes", recipes_path, class: "d-block text-decoration-none btn btn-primary w-100 h-75" %>
+    </div>
+  </div>
+</div>
