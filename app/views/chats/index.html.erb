@@ -16,7 +16,7 @@
             </h6>
 
             <%= link_to chat_path(chat), class: "d-block text-decoration-none" do %>
-              <div class="div-button access-button">
+              <div class="div-button access-button rounded-5">
                 <p>Accéder à l'historique du chat!</p>
               </div>
             <% end %>
@@ -24,7 +24,7 @@
             <%= link_to chat_path(chat),
                 data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr(e) de vouloir supprimer ce chat ?" },
                 class: "d-block text-decoration-none" do %>
-              <div class="div-button delete-button">
+              <div class="div-button delete-button rounded-5">
                 <p>Supprimer</p>
               </div>
             <% end %>
@@ -34,6 +34,6 @@
         <h1 class = "text-center">Please chat with our SuperCarbo BOT first! 🤖</h1>
       <% end %>
     </div>
-    <%= link_to "Démarrer un nouveau chat", new_chat_item_path, class: "btn btn-primary btn-lg px-4 py-2 mt-4" %>
+    <%= link_to "Démarrer un nouveau chat", new_chat_item_path, class: "btn btn-primary btn-lg px-4 py-2 mt-4 rounded-5" %>
   </div>
 </div>

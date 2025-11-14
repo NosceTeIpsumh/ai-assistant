@@ -8,8 +8,8 @@
     <div class="row row-cols-lg-4 align-items-stretch">
       <% if @recipes.any? %>
         <% @recipes.each do |recipe| %>
-          <div class="col mb-4">
-            <div class="card-recipe-bis p-3 h-100 d-flex flex-column">
+          <div class="col-lg-4 mb-4">
+            <div class="card-recipe-bis p-3 rounded-5 text-primary">
 
               <h5 class="mb-3">
                 <%= recipe.name %>
@@ -18,7 +18,7 @@
               <p class="flex-grow-1"><%= recipe.description %></p>
 
               <%= link_to recipe_path(recipe), class: "d-block text-decoration-none" do %>
-                <div class="div-button-recipe access-button-recipe">
+                <div class="div-button-recipe access-button-recipe rounded-5">
                   <p>Voir cette recette</p>
                 </div>
               <% end %>
@@ -26,7 +26,7 @@
               <%= link_to recipe_path(recipe),
                   data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr(e) de vouloir supprimer cette recette ?" },
                   class: "d-block text-decoration-none" do %>
-                <div class="div-button-recipe delete-button-recipe">
+                <div class="div-button-recipe delete-button-recipe rounded-5">
                   <p>Supprimer</p>
                 </div>
               <% end %>
@@ -35,6 +35,6 @@
         <% end %>
       <% end %>
     </div>
-    <%= link_to "Ajoute une recette", new_recipe_path, class: "btn btn-primary btn-lg px-4 py-2 mt-4" %>
+    <%= link_to "Ajoute une recette", new_recipe_path, class: "btn btn-primary btn-lg px-4 py-2 mt-4 rounded-5" %>
   </div>
 </div>
