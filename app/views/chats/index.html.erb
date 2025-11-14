@@ -6,30 +6,28 @@
       </h1>
     </div>
 
-    <div class="row">
+    <div class="d-flex chats-container">
       <% if @chats.any? %>
         <% @chats.each do |chat| %>
-          <div class="col-lg-4 mb-4">
-            <div class="card-product-bis p-3">
+          <div class="card-product-bis p-3">
 
-              <h6 class="mb-3">
-                <%= chat.title %>
-              </h6>
+            <h6 class="mb-3">
+              <%= chat.title %>
+            </h6>
 
-              <%= link_to chat_path(chat), class: "d-block text-decoration-none" do %>
-                <div class="div-button access-button">
-                  <p>Accéder à l'historique du chat!</p>
-                </div>
-              <% end %>
+            <%= link_to chat_path(chat), class: "d-block text-decoration-none" do %>
+              <div class="div-button access-button">
+                <p>Accéder à l'historique du chat!</p>
+              </div>
+            <% end %>
 
-              <%= link_to chat_path(chat),
-                  data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr(e) de vouloir supprimer ce chat ?" },
-                  class: "d-block text-decoration-none" do %>
-                <div class="div-button delete-button">
-                  <p>Supprimer</p>
-                </div>
-              <% end %>
-            </div>
+            <%= link_to chat_path(chat),
+                data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr(e) de vouloir supprimer ce chat ?" },
+                class: "d-block text-decoration-none" do %>
+              <div class="div-button delete-button">
+                <p>Supprimer</p>
+              </div>
+            <% end %>
           </div>
         <% end %>
       <% else %>
