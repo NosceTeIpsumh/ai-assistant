@@ -10,14 +10,16 @@
       <% if @recipes.any? %>
         <% @recipes.each do |recipe| %>
           <div class="col-lg-4 mb-4">
-            <div class="card-product-bis p-3">
+            <div class="card-recipe-bis p-3">
 
-              <h6 class="mb-3">
+              <h5 class="mb-3">
                 <%= recipe.name %>
-              </h6>
+              </h5>
+
+              <p><%= recipe.description %></p>
 
               <%= link_to recipe_path(recipe), class: "d-block text-decoration-none" do %>
-                <div class="div-button access-button">
+                <div class="div-button-recipe access-button-recipe">
                   <p>Voir cette recette</p>
                 </div>
               <% end %>
@@ -25,7 +27,7 @@
               <%= link_to recipe_path(recipe),
                   data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr(e) de vouloir supprimer cette recette ?" },
                   class: "d-block text-decoration-none" do %>
-                <div class="div-button delete-button">
+                <div class="div-button-recipe delete-button-recipe">
                   <p>Supprimer</p>
                 </div>
               <% end %>
