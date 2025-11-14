@@ -1,0 +1,82 @@
+$card-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+$border-color: #dee2e6;
+
+.card-recipe-bis {
+  margin-top: 40px;
+  width:50%;
+  overflow: hidden;
+  background: white;
+  box-shadow: $card-shadow;
+  position: relative;
+  h5 {
+    text-align: center;
+    min-height: 100px;
+    line-height: 1.4;
+    min-height: 45px;
+    overflow: hidden;
+  }
+}
+
+.div-button-recipe {
+  margin-top: auto;
+  text-align: center;
+  padding: 8px 12px;
+  border: 1px solid $border-color;
+  border-radius: 0.25rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.4s ease !important;
+  p {
+    margin-bottom: 0;
+  }
+
+   &:hover {
+    cursor: pointer;
+    transition: all;
+  }
+}
+
+.access-button-recipe {
+  background-color: #f8f9fa;
+  margin-bottom: 10px;
+
+  &:hover {
+      background-color: #e9ecef;
+  }
+}
+
+.delete-button-recipe {
+  background-color: #f8d7da;
+  color: #721c24;
+  margin-bottom: 10px;
+
+  &:hover {
+      background-color: #f7c0c7;
+  }
+}
+
+.card-recipe-bis {
+  a.d-block {
+    display: block;
+    text-decoration: none;
+  }
+}
+
+.card-recipe-bis h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+
+.card-recette-bis .card-product-infos {
+  padding: 16px;
+}
+
+.chats-container {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
