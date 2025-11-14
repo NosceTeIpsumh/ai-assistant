@@ -98,3 +98,17 @@ body {
 .homepage-main-text {
   margin-top: 180px;
 }
+
+/* police placeholder de la collection */
+.new-police {
+   font-family: "Poppins", sans-serif;   /* ou n'importe quelle police */
+  font-size: 16px;
+  font-style: italic;
+  color: #adadae;
+}
+.placeholder-custom {
+  font-family: "Arial", sans-serif;   /* ou n'importe quelle police */
+  font-size: 16px;
+  font-style: italic;
+  color:  #b7a6e1;
+}

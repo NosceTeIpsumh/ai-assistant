@@ -3,8 +3,8 @@
     <h1 class="header-home display-5 fw-bold text-primary" >🌽🥬Nouveau CarboDuct🥩🍇</h1>
       <%= simple_form_for @item do |f| %>
         <%= f.input :name, placeholder: "Exemple: patate douce, entrecôte, banane...", input_html: { class: "placeholder-custom" } %>
-        <%= f.input :brand, placeholder: "Exemple: Panzani, Charal, Cassegrain...", input_html: { class: "placeholder-custom" } %>
-        <%= f.input :category, collection: ["Glucide", "Proteine", "graisse", "fibres","legume"], prompt: false, input_html: { class: "form-select custom-font" } %>
+        <%= f.input :brand, placeholder: "Exemple: Panzani, Charal, Cassegrain...", input_html: { class: "new-police" } %>
+        <%= f.input :category, collection: ["Glucide", "Proteine", "graisse", "fibres","legume"], prompt: false, input_html: { class: "new-police" } %>
         <%= f.input :indice_gly, placeholder: "Compris entre 1 et 100", input_html: { class: "placeholder-custom" } %>
         <%= f.input :ratio_glucide, placeholder: "Pour 100g. Exemple: 27", input_html: { class: "placeholder-custom" } %>
         <%= f.submit "Enregistrer le CarboDuct", class: "btn btn-primary" %>
