@@ -1,15 +1,15 @@
 <div class= "container ">
   <div class= "text-center">
-    <h1 class="header-home display-5 fw-bold text-primary" >🌽🥬Nouvelle recette🥩🍇</h1>
+    <h1 class="header-home display-5 fw-bold text-primary" >Nouvelle recette🥩🍇</h1>
       <%= simple_form_for @recipe do |f| %>
         <%= f.input :name, placeholder: "Donne un nom à ta recette...", input_html: { class: "placeholder-custom" } %>
         <%= f.input :description, placeholder: "Une description brève de ta recette", input_html: { class: "placeholder-custom" } %>
         <%= f.input :difficulty, collection: [1,2,3,4,5], prompt: "1 pour très facile, 5 pour très difficile", input_html: { class: "form-select custom-font" } %>
         <%= f.input :indice_gly, placeholder: "Compris entre 1 et 100", input_html: { class: "placeholder-custom" } %>
-        <%= f.submit "Enregistre la recette", class: "btn btn-primary" %>
+        <%= f.submit "Enregistre la recette", class: "btn btn-primary rounded-5" %>
       <% end %>
       <div class="mt-4 d-flex justify-content-center gap-3 flex-wrap">
-        <%= link_to "Voir mes recettes", recipes_path, class: "btn btn-primary" %>
+        <%= link_to "Voir mes recettes", recipes_path, class: "btn btn-primary rounded-5" %>
       </div>
   </div>
  </div>
