@@ -3,6 +3,11 @@
     <h1 class="text-center display-5 fw-bold text-primary mb-5">
       Sélectionnez vos Carboduct
     </h1>
+
+    <h4 class = "text-center fw-bold text-info mb-5">
+      Avant de parler à notre super BOT, choississez quels CarboDucts vous voulez intégrer dans vos recettes! <br> Si vous en choississez aucun, notre super BOT s'en occupera! 🤖
+    </h4>
+
     <% if @items.any? %>
       <%= simple_form_for @chat_item do |f| %>
 

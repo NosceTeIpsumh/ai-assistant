@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="card shadow-sm rounded-5 mt-4 p-4">
     <div class="text-center pt-1 pb-3">
@@ -6,7 +5,7 @@
         Mes recettes
       </h1>
     </div>
-    <div class="row">
+    <div class="row row-cols-lg-4 align-items-stretch">
       <% if @recipes.any? %>
         <% @recipes.each do |recipe| %>
           <div class="col-lg-4 mb-4">
@@ -16,7 +15,7 @@
                 <%= recipe.name %>
               </h5>
 
-              <p><%= recipe.description %></p>
+              <p class="flex-grow-1"><%= recipe.description %></p>
 
               <%= link_to recipe_path(recipe), class: "d-block text-decoration-none" do %>
                 <div class="div-button-recipe access-button-recipe rounded-5">

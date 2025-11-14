@@ -3,19 +3,25 @@ $border-color: #dee2e6;
 
 .card-recipe-bis {
   margin-top: 40px;
-  width:50%;
   overflow: hidden;
   background: white;
   box-shadow: $card-shadow;
   position: relative;
+
+
   h5 {
     text-align: center;
-    min-height: 100px;
     line-height: 1.4;
     min-height: 45px;
     overflow: hidden;
   }
 }
+
+.card-recipe-bis p.flex-grow-1 {
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
 
 .div-button-recipe {
   margin-top: auto;
@@ -31,7 +37,7 @@ $border-color: #dee2e6;
     margin-bottom: 0;
   }
 
-   &:hover {
+    &:hover {
     cursor: pointer;
     transition: all;
   }
@@ -68,8 +74,6 @@ $border-color: #dee2e6;
   font-weight: bold;
   margin: 0;
 }
-
-
 
 .card-recette-bis .card-product-infos {
   padding: 16px;
