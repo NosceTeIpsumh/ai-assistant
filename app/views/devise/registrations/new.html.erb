@@ -20,6 +20,7 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
+        <%= f.input :photo, as: :file, hint: "Ajoute une photo pour ton avatar" %>
       </div>
 
       <div class="form-actions btn btn-primary">
