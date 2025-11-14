@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="card shadow-sm rounded-5 mt-4 p-4">
+    <div class="text-center pt-1 pb-3">
+      <h1 class="display-5 fw-bold text-primary mb-4 mt-4">
+        Mes recettes
+      </h1>
+    </div>
+    <div class="row">
+      <% if @recipes.any? %>
+        <% @recipes.each do |recipe| %>
+          <div class="col-lg-4 mb-4">
+            <div class="card-product-bis p-3">
+
+              <h6 class="mb-3">
+                <%= recipe.name %>
+              </h6>
+
+              <%= link_to recipe_path(recipe), class: "d-block text-decoration-none" do %>
+                <div class="div-button access-button">
+                  <p>Voir cette recette</p>
+                </div>
+              <% end %>
+
+              <%= link_to recipe_path(recipe),
+                  data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr(e) de vouloir supprimer cette recette ?" },
+                  class: "d-block text-decoration-none" do %>
+                <div class="div-button delete-button">
+                  <p>Supprimer</p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%= link_to "Ajoute une recette", new_recipe_path, class: "btn btn-primary btn-lg px-4 py-2 mt-4" %>
+  </div>
+</div>

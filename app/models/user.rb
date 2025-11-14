@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :chats, dependent: :destroy
   has_many :items, dependent: :destroy
+  has_many :recipes, dependent: :destroy
   validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 5, maximum: 20 }
   before_save :downcase_username, if: -> { username.present? }
 

@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
   resources :chat_items, only: [:new, :create]
   resources :items, except: [:edit, :update]
+  resources :recipes, only: [:index, :show, :new, :create, :destroy]
 end
